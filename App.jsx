@@ -1,13 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      {/* eslint-disable */}
-      <StatusBar style='auto' />
+      <View>
+        <View>
+          <Text>Memo App</Text>
+          <Text>ログアウト</Text>
+        </View>
+      </View>
+
+      <View>
+        <View>
+          <View>
+            <Text>買い物リスト</Text>
+            <Text>2021年2月1日</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View>
+          <View>
+            <Text>買い物リスト</Text>
+            <Text>2021年2月1日</Text>
+          </View>
+          <View>
+            <Text>X</Text>
+          </View>
+        </View>
+      </View>
+
     </View>
   );
 }
