@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, StyleSheet, View, ScrollView } from 'react-native';
+import {
+  Text, StyleSheet, View, ScrollView,
+} from 'react-native';
 
 import AppBar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
@@ -13,12 +15,12 @@ export default function MemoDetailScreen() {
         <Text style={styles.memoDate}>2021年1月1日</Text>
       </View>
       <ScrollView style={styles.memoBody}>
-        <Text>
+        <Text style={styles.memoText}>
           買い物リスト
           書体やレイアウトなどを確認するために用います。本文用なので使い方を間違えると不自然に見えることもありますので要注意。
         </Text>
       </ScrollView>
-      <CircleButton style={{ top: 160, bottom: 'auto' }}>+</CircleButton>
+      <CircleButton style={{ top: 160, bottom: 'auto' }} name="edit-2" />
     </View>
   );
 }
