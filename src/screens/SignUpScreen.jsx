@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,18 @@ export default function SignUpScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }],
+        });
+      }
+    });
+    return unsubscribe;
+  }, []);
+
   function handlePress() {
     firebase
       .auth()
@@ -29,7 +41,7 @@ export default function SignUpScreen(props) {
       })
       .catch((error) => {
         console.log(error.code, error.message);
-        Alert.alert(error.code)
+        Alert.alert(error.code);
       });
   }
 
